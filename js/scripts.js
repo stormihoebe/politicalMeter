@@ -6,13 +6,17 @@ $(function(){
     var input3 = $("input:radio[name=question3]:checked").val();
 
     $(".quizResult p").hide();
-    
-    if (input1 === "yes" && input2 === "obama" && input3 === "yes") {
-      $("#liberal").show();
-    } else if (input1 === "no" && input2 === "reagan" && input3 === "no") {
-      $("#conservative").show();
+
+    if (input1 && input2 && input3) {
+      if (input1 === "yes" && input2 === "obama" && input3 === "yes") {
+        $("#liberal").show();
+      } else if (input1 === "no" && input2 === "reagan" && input3 === "no") {
+        $("#conservative").show();
+      } else {
+        $("#moderate").show();
+      };
     } else {
-      $("#moderate").show();
+      alert("Please answer all the questions")
     };
 
   });
